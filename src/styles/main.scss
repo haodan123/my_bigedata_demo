@@ -1,0 +1,393 @@
+@import './base.css';
+
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  // color: var(--vt-c-indigo);
+}
+
+img {
+  // pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+/* 站酷渔阳体 */
+// @font-face {
+//   font-family: 'zkyy';
+//   /* 自定义字体名称 */
+//   src: url('@/styles/font/TsangerYuYangT_W03_W03.ttf') format('truetype');
+//   /* 添加其他格式的文件（如果有） */
+//   font-weight: normal;
+//   /* 字体粗细 */
+//   font-style: normal;
+//   /* 字体样式（斜体等） */
+// }
+
+body {
+  font-family: 'zkyy', sans-serif;
+}
+
+.page_bg {
+  width: 100vw;
+  height: 100vh;
+  background: url('@/assets/global/body_bg.png') center center no-repeat;
+  background-size: cover;
+}
+
+// 倾斜的动画start
+.anim_box {
+  // perspective: 100vw;
+  perspective: 1000px;
+  /* 视距 */
+}
+
+.leftanim {
+  z-index: 30 !important;
+}
+
+.rightanim {
+  z-index: 30 !important;
+}
+
+.anim_in_left1 {
+  transition: all 1s;
+  position: relative;
+  animation: moveLeft 1s;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+}
+
+.anim_in_left2 {
+  transition: all 1s;
+  position: relative;
+  animation: moveLeft 1s;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+.anim_in_left3 {
+  transition: all 1s;
+  position: relative;
+  animation: moveLeft 1s;
+  animation-duration: 2.5s;
+  animation-timing-function: ease-in-out;
+}
+
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(-100%) rotateY(10deg);
+  }
+
+  100% {
+    transform: translateX(0) rotateY(10deg);
+  }
+}
+
+
+.anim_in_right1 {
+  transition: all 1s;
+  position: relative;
+  animation: moveRight 1s;
+  animation-duration: 1.5s;
+}
+
+.anim_in_right2 {
+  transition: all 1s;
+  position: relative;
+  animation: moveRight 1s;
+  animation-duration: 2s;
+}
+
+.anim_in_right3 {
+  transition: all 1s;
+  position: relative;
+  animation: moveRight 1s;
+  animation-duration: 2.5s;
+}
+
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(100%) rotateY(-10deg);
+  }
+
+  100% {
+    transform: translateX(0) rotateY(-10deg);
+  }
+}
+
+
+.anim_box_left {
+  transition: all 1s;
+  position: relative;
+  transform-style: preserve-3d;
+  // transform: rotateY(75deg);
+  transform: rotateY(10deg);
+}
+
+.anim_box_right {
+  transition: all 1s;
+  position: relative;
+  transform-style: preserve-3d;
+  // transform: rotateY(-75deg);
+  transform: rotateY(-10deg);
+}
+
+// 倾斜的动画end
+
+
+.body_bg {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.main_body {
+  width: 100%;
+  // height: calc(100% - var(--header-height));
+  height: calc(95% - var(--header-height));
+  position: relative;
+  display: flex;
+  padding: 0 1%;
+  gap: 10px;
+}
+
+//青岛1之后95% 因为要给底部留出可点击的地方
+.main_body_qd1 {
+  width: 100%;
+  height: calc(95% - var(--header-height));
+  position: relative;
+  display: flex;
+  padding: 0 1%;
+
+  gap: 10px;
+}
+
+.body_bottom {
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80vw;
+  height: 50vh;
+  // z-index: 1;
+}
+
+.body_bottom_img {
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.body_bottom_map_bg {
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+}
+
+.body_bottom_map_bg_img {
+  pointer-events: none;
+  user-select: none;
+  width: 100%;
+  height: 100%;
+}
+
+.body_bottom_map_text {
+  position: absolute;
+  // top: 0%;
+  // left: 0%;
+  cursor: pointer;
+  color: #494C53;
+  display: flex;
+  align-items: center;
+  gap: .3125rem;
+}
+
+.body_bottom_map_text_img {
+  width: 1.875rem;
+  height: 1.875rem;
+  user-select: none;
+
+}
+
+.body_bottom_map_text_active {
+  color: #fff;
+}
+
+
+// 25 50 25 三行布列的样式 start
+// 左右两边的容器
+.t_container_item {
+  width: 25%;
+  // perspective: 100vw;
+  perspective: 1000px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  // gap: 15px;
+  gap: 1.875rem;
+  // background: rgba(9, 43, 112, 0.3);
+  z-index: 9;
+  position: relative;
+  transition: all 1s;
+  // overflow: hidden;
+}
+
+// 中间地图的容器
+.t_container_center_map {
+  width: 50%;
+  // height: 100%;
+  // height: 98%;
+  // height: 85%;
+  height: 95%;
+  padding-top: 1.5%;
+  z-index: 4;
+  position: relative
+}
+
+.t_t_view_item {
+  transition: all 1s;
+  width: 100%;
+  height: 33%;
+  position: relative;
+}
+
+.t_t_view_item_container {
+  width: 100%;
+  z-index: 12;
+  height: calc(100% - var(--box-title-height));
+  position: relative;
+}
+
+
+
+
+.container_bg_border {
+  border: 2rem solid transparent;
+  border-width: 2.125rem 1.583rem 0.833rem 5.5rem;
+  border-image: url('@/assets/global/kg-border-content1.png') 73 44 27 148;
+  border-image-slice: 57;
+  border-image-width: 28px;
+  border-image-outset: 0;
+  position: relative;
+}
+
+.inner {
+  padding: 1rem 1.5rem;
+  position: absolute;
+  top: -3.525rem;
+  right: -2.583rem;
+  bottom: -0.633rem;
+  left: -6.5rem;
+}
+
+.inner_box {
+  width: 100%;
+  height: 100%;
+  // background-color: rgb(21 48 80 / 83%);
+  background-color: rgb(21 48 80 / 83%);
+}
+
+// 25 50 25 三行布列的样式 end
+
+
+// 50 50 两行布列的样式 start
+.two_container_item {
+  perspective: 1000px;
+  transition: all 1s;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  // gap: 15px;
+  gap: 1.875rem;
+  align-items: center;
+  justify-content: center;
+  // background: rgba(9, 43, 112, 0.3);
+  z-index: 9;
+  position: relative;
+  transition: all 1s;
+}
+
+// 中间地图的容器
+.two_container_center_map {
+  width: 50%;
+  height: 100%;
+  padding-top: 1%;
+  // height: 85%;
+  z-index: 4;
+  position: relative
+}
+
+.two_t_view_item {
+  transition: all 1s;
+  width: 100%;
+  height: 40%;
+  position: relative;
+}
+
+// 50 50 两行布列的样式 end
+
+
+
+// 250 50 25 两行布列的样式 start
+.two_two_container_item {
+  perspective: 1000px;
+  transition: all 1s;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // gap: 15px;
+  gap: 1.875rem;
+
+  z-index: 9;
+  position: relative;
+  transition: all 1s;
+}
+
+// 中间地图的容器
+.two_two_container_center_map {
+  width: 50%;
+  // height: 98%;
+  // height: 85%;
+  height: 95%;
+  padding-top: 1.5%;
+  z-index: 4;
+  position: relative
+}
+
+.two_two_view_item {
+  transition: all 1s;
+  width: 100%;
+  // height: 50%;
+  height: 40%;
+  position: relative;
+}
+
+// 50 50 两行布列的样式 end

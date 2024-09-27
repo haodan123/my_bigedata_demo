@@ -1,0 +1,124 @@
+@import './base.css';
+@import './anim.scss';
+
+img {
+  pointer-events: none;
+  user-select: none;
+}
+
+.page_bg {
+  width: 100vw;
+  height: 100vh;
+
+  background: url('@/assets/global/body_bg.png') center center no-repeat;
+  // background-size: cover;
+}
+
+.body_bg {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.main_body {
+  width: 100%;
+  // height: calc(100% - var(--header-height));
+  height: calc(100% - var(--header-height));
+  position: relative;
+  display: flex;
+  padding: 1%;
+  gap: 10px;
+}
+
+
+//一般的地图容器
+.map_main_view {
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  position: absolute;
+  inset: 0;
+}
+
+
+// 第一个页面的每一项css start
+.sc1_container_item {
+  z-index: 4;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .9375rem;
+  position: relative;
+  transition: all 1s;
+  // overflow: hidden;
+}
+
+.sc1_view_item {
+  height: 33%;
+  width: 100%;
+  background-size: 100% 100%;
+  // padding: .625rem;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+// 第一个页面的每一项css end
+
+// 第2个页面的每一项css start
+.sc2_container_item_top {
+  // z-index: 4;
+  width: 100%;
+  height: 66%;
+  display: flex;
+  // flex-direction: column;
+  gap: 2.8125rem;
+  position: relative;
+  transition: all 1s;
+  display: flex;
+
+  // overflow: hidden;
+}
+
+.sc2_container_item_btm {
+  z-index: 4;
+  width: 100%;
+  height: 33%;
+  display: flex;
+  // flex-direction: column;
+  gap: .9375rem;
+  position: relative;
+  transition: all 1s;
+  // overflow: hidden;
+}
+
+.sc2_view_top {
+  display: flex;
+  flex-direction: column;
+  gap: .9375rem;
+  width: 25%;
+  height: 100%;
+}
+
+.sc2_view_item_top {
+  height: 50%;
+  width: 100%;
+  background-size: 100% 100%;
+  // padding: .625rem;
+  z-index: 4;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sc2_view_item_btm {
+  height: 100%;
+  width: 25%;
+  background-size: 100% 100%;
+  // padding: .625rem;
+  z-index: 4;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+// 第2个页面的每一项css end
