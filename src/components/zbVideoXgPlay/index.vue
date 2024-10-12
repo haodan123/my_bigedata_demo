@@ -52,6 +52,8 @@ const initData = async () => {
 const playVideo = async url => {
   singlePlayer.value = new Player({
     el: myVideo.value,
+    lang: 'zh',//中文
+    // lang: 'en',英文
     // volume: 0.3,
     volume: 0,
     // 自动播放

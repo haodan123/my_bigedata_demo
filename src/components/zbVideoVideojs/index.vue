@@ -2,12 +2,12 @@
   <div class="box_video">
     <img class="video_img" src="@/assets/global/video_bg.png" mode="scaleToFill" />
     <div class="hello">
-      <div class="loading" v-show="isloading">
+      <!-- <div class="loading" v-show="isloading">
         <div class="donut" v-if="!nosxt"></div>
         <div style="margin-top: 40px">
           {{ nosxt ? '园区无摄像头' : '网络延迟画面加载中，请稍候。。。' }}
         </div>
-      </div>
+      </div> -->
 
       <div class="video-div">
         <video
@@ -27,6 +27,8 @@
 import 'video.js/dist/video-js.css'
 import videojs from 'video.js'
 // import 'videojs-contrib-hls'
+// import 'video.js/dist/lang/zh-CN.js'
+import video_zhCN from 'video.js/dist/lang/zh-CN.json'
 import { onMounted, ref, nextTick, onUnmounted } from 'vue'
 const isloading = ref(false) //true显示 遮罩加载
 const nosxt = ref(false) //true 显示无摄像头
@@ -50,6 +52,7 @@ const initData = async () => {
 const playVideo = async url => {
   setTimeout(async () => {
     // this.singlePlayer = videojs('singleVideo1', {
+    videojs.addLanguage('zh-CN', video_zhCN)
     singlePlayer.value = videojs(myVideo.value, {
       sources: [
         {
@@ -57,6 +60,7 @@ const playVideo = async url => {
           type: 'application/x-mpegURL'
         }
       ],
+      language: 'zh-CN',
       autoplay: true, //自动播放
       controls: true, //控件显示
       width: '100%', //视频框宽度
